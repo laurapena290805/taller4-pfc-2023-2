@@ -1,5 +1,5 @@
 /**
-  * Taller 3 - Programación Funcional
+  * Taller 4 - Programación Concurrente
   * Autores: <Estudiantes>
   * Profesor: Carlos A Delgado
   */
