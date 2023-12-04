@@ -28,7 +28,7 @@ class Matrices {
 
   def multMatriz(m1: Matriz, m2: Matriz): Matriz = {
     val t_m2 = transpuesta(m2)
-    val n = m1.length 
+    val n: Int = m1.map(_ => 1).foldLeft(0)(_+_)
     Vector.tabulate(n, n)((i,j) => prodPunto(m1(i), t_m2(j)))
   }
 
@@ -41,14 +41,14 @@ class Matrices {
   //1.2.2 Sumando matrices
 
   def sumMatriz(m1: Matriz, m2: Matriz): Matriz = {
-    val n = m1.length
+    val n: Int = m1.map(_ => 1).foldLeft(0)(_+_)
     Vector.tabulate(n, n)((i, j) => m1(i)(j) + m2(i)(j))
   }
 
   //1.2.3 Multiplicando matrices recursivamente, versión secuencial
 
   def multMatrizRec(m1: Matriz, m2:Matriz): Matriz = {
-    val n = m1.length 
+    val n: Int = m1.map(_ => 1).foldLeft(0)(_+_)
     val z = n/2
     n match {
       case 1 => Vector(Vector(m1(0)(0) * m2(0)(0)))
