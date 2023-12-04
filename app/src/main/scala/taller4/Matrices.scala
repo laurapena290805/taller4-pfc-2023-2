@@ -32,6 +32,8 @@ class Matrices {
     Vector.tabulate(n, n)((i,j) => prodPunto(m1(i), t_m2(j)))
   }
 
+  //1.1.2 Versión estándar paralela
+
   //1.2.1 Extrayendo submatrices 
 
   def subMatriz(m: Matriz, i: Int, j: Int, l: Int): Matriz = {
@@ -76,3 +78,6 @@ class Matrices {
     }
   }
 }
+
+
+ //Multiplicando matrices recursivamente, versión paralela
