@@ -39,8 +39,8 @@ object Taller4 {
     } yield {
       println(s"Multiplicando matrices de ${math.pow(2, i).toInt}x${math.pow(2, i).toInt}");
       val (t1, t2, aceleracion) = benchmark.compararAlgoritmos(
-        new Strassen().multStrassen,
-        new Strassen().multStrassenPar
+        new Recursiva().multMatrizRec,
+        new Recursiva().multMatrizRecPar
       )(m1, m2);
       println(s"Tiempo secuencial: $t1");
       println(s"Tiempo paralelo: $t2");
