@@ -5,7 +5,7 @@ import org.junit.runner.RunWith
 import org.scalatestplus.junit.JUnitRunner
 
 @RunWith(classOf[JUnitRunner])
-class test5RestaMatriz extends AnyFunSuite{
+class test6RestaMatriz extends AnyFunSuite{
     val obj = new Matrices()
     val obj1 = new Strassen()
 
