@@ -1,5 +1,7 @@
 package taller4;
-import scala.util.Random;
+import common.task
+
+import scala.util.Random
 import scala.collection.parallel.immutable.ParVector;
 class Matrices {
   type Matriz = Vector[Vector[Int]];
@@ -46,6 +48,18 @@ class Matrices {
     val t_m2 = transpuesta(m2)
     val n = m1.length 
     Vector.tabulate(n, n)((i,j) => prodPunto(m1(i), t_m2(j)))
+  }
+
+  def multMatrizPar(m1: Matriz, m2:Matriz): Matriz = {
+    val t_m2 = transpuesta(m2)
+    val n = m1.length
+    val m=Vector.tabulate(n, n){
+      (i, j) => task{
+        prodPunto(m1(i), t_m2(j))
+      }
+    }
+    Vector.tabulate(n,n){
+      (i,j)=>m(i)(j).join()}
   }
 
   //1.2.1 Extrayendo submatrices 

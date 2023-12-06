@@ -19,7 +19,6 @@ object Taller4 {
       }
     );
 
-    /*
     for {
       i <- 1 to 10
     } yield {
@@ -29,26 +28,61 @@ object Taller4 {
         new Matrices().prodPunto,
         new Matrices().prodPuntoParD
       );
-      println(s"Tiempo secuencial: $t1");
-      println(s"Tiempo paralelo: $t2");
-      println(s"Aceleración: $aceleracion");
-*/
+      println(s"Tiempo secuencial=  $t1");
+      println(s"Tiempo paralelo=  $t2");
+      println(s"Aceleración=  $aceleracion");
 
+    /*
     for {
       i <- 1 to 10
       m1 = matriz.matrizAlAzar(math.pow(2, i).toInt, 2)
       m2 = matriz.matrizAlAzar(math.pow(2, i).toInt, 2)
     } yield {
+      println(s"****************************************")
       println(s"Multiplicando matrices de ${math.pow(2, i).toInt}x${math.pow(2, i).toInt}");
+      val (t1, t2, aceleracion) = benchmark.compararAlgoritmos(
+        new Matrices().multMatriz,
+        new Matrices().multMatrizPar
+      )(m1, m2);
+      println(s"Tiempo secuencial=   $t1");
+      println(s"Tiempo paralelo=   $t2");
+      println(s"Aceleración=   $aceleracion");
+*/
+
+    }
+
+/*
+    for {
+  i <- 1 to 10
+  m1 = matriz.matrizAlAzar(math.pow(2, i).toInt, 2)
+  m2 = matriz.matrizAlAzar(math.pow(2, i).toInt, 2)
+} yield {
+  println(s"****************************************")
+  println(s"Multiplicando matrices con Strassen de ${math.pow(2, i).toInt}x${math.pow(2, i).toInt}");
+  val (t1, t2, aceleracion) = benchmark.compararAlgoritmos(
+    new Strassen().multStrassen,
+    new Strassen().multStrassenPar
+  )(m1, m2);
+  println(s"Tiempo secuencial=   $t1");
+  println(s"Tiempo paralelo=   $t2");
+  println(s"Aceleración=   $aceleracion");
+
+
+}
+    for {
+      i <- 1 to 10
+      m1 = matriz.matrizAlAzar(math.pow(2, i).toInt, 2)
+      m2 = matriz.matrizAlAzar(math.pow(2, i).toInt, 2)
+    } yield {
+      println(s"****************************************")
+      println(s"Multiplicando matrices recursivas de ${math.pow(2, i).toInt}x${math.pow(2, i).toInt}");
       val (t1, t2, aceleracion) = benchmark.compararAlgoritmos(
         new Recursiva().multMatrizRec,
         new Recursiva().multMatrizRecPar
       )(m1, m2);
-      println(s"Tiempo secuencial: $t1");
-      println(s"Tiempo paralelo: $t2");
-      println(s"Aceleración: $aceleracion");
-
-
-    }
+      println(s"Tiempo secuencial=   $t1");
+      println(s"Tiempo paralelo=  $t2");
+      println(s"Aceleración=  $aceleracion");
+    }*/
   }
 }
