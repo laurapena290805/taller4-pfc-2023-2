@@ -12,12 +12,14 @@ object Taller4 {
 
     val benchmark = new Benchmark();
     val matriz = new Matrices();
-/*
+
     println(
       withWarmer(new Warmer.Default) measure {
         (1 to 100000000).toArray
       }
     );
+
+    /*
     for {
       i <- 1 to 10
     } yield {
